@@ -202,7 +202,7 @@ class AccountController extends Controller
                 'account_id' => $id,
                 'fee' => $validateCommission['fee'],
                 'amount_before_fee' => $request->monto,
-                'type_deposit_id' => 2,
+                'type_deposit_id' => 3,
                 'account_id_reference'=>$request->cuenta_destino,
                 'transaction_date' => Carbon::now()
                 
@@ -214,7 +214,7 @@ class AccountController extends Controller
                 'account_id' => $request->cuenta_destino,
                 'fee' => null,
                 'amount_before_fee' => null,
-                'type_deposit_id' => 3,
+                'type_deposit_id' => 1,
                 'account_id_reference'=>$id,
                 'transaction_date' => Carbon::now()
             ]);

@@ -30,7 +30,9 @@ class Account extends Model
         return TransactionHistory::selectRaw("
                 type_deposits.name tipo,
                 transaction_histories.amount monto,
-                transaction_histories.transaction_date fecha
+                transaction_histories.transaction_date fecha,
+                transaction_histories.fee comision,
+                transaction_histories.account_id_reference cuenta_de_referencia
         ")
             ->join('type_deposits', function ($join) {
                 $join->on('transaction_histories.type_deposit_id', '=', 'type_deposits.id');
