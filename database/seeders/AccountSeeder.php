@@ -23,5 +23,10 @@ class AccountSeeder extends Seeder
             'user_id'=>2,
             'account_type_id' => 1
         ]);
+
+        Account::create([
+            'user_id'=>3,
+            'account_type_id' => 2
+        ]);
     }
 }

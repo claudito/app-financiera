@@ -15,11 +15,13 @@ class AccountTypeSeeder extends Seeder
     {
         //
         AccountType::create([
-            'name' => 'Cuenta Estandar'
+            'name' => 'Cuenta Estandar',
+            'minimum_balance'=>100
         ]);
 
         AccountType::create([
-            'name' => 'Cuenta Premium'
+            'name' => 'Cuenta Premium',
+            'minimum_balance'=>null
         ]);
     }
 }

@@ -19,6 +19,8 @@ return new class extends Migration
             $table->foreign('type_deposit_id')->references('id')->on('type_deposits');
             $table->unsignedBigInteger('type_deposit_id');
             $table->dateTime('transaction_date');
+            $table->string('fee')->nullable();
+            $table->decimal('amount_fee', $precision = 8, $scale = 2)->nullable();
             $table->timestamps();
         });
     }

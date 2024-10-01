@@ -28,5 +28,12 @@ class TransactionHistorySeeder extends Seeder
             'amount' => 200,
             'transaction_date' => Carbon::now()
         ]);
+
+        TransactionHistory::create([
+            'account_id' => 3,
+            'type_deposit_id'=>1,
+            'amount' => 5000,
+            'transaction_date' => Carbon::now()
+        ]);
     }
 }

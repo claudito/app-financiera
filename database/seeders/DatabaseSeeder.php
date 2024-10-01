@@ -25,7 +25,8 @@ class DatabaseSeeder extends Seeder
             AccountTypeSeeder::class,
             TypeDepositSeeder::class,
             AccountSeeder::class,
-            TransactionHistorySeeder::class
+            TransactionHistorySeeder::class,
+            CommissionTypeSeeder::class
         ]);
     }
 }

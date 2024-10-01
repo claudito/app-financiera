@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('account_types', function (Blueprint $table) {
+        Schema::create('commission_types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('minimum_balance')->nullable();
+            $table->integer('fee');
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('account_types');
+        Schema::dropIfExists('commission_types');
     }
 };
