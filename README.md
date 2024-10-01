@@ -6,5 +6,8 @@
 -  Cargar Ruta de Test : php artisan serve --host=127.0.0.1 --port=8000
 
 
+## Requisitos minimos
+-  PHP 8 o superior
+
 ## Paquetes Instalados
 -   [ Laravel 10 ](https://laravel.com/docs/10.x).
