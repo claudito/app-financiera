@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class TransactionHistory extends Model
 {
     use HasFactory;
+
+
+    protected $casts = [
+        'transaction_date' => 'datetime:d/m/Y H:i:s'
+    ];
+
 }

@@ -16,13 +16,11 @@ class AccountSeeder extends Seeder
         //
         Account::create([
             'user_id'=>1,
-            'balance' =>5000,
             'account_type_id' => 1
         ]);
 
         Account::create([
             'user_id'=>2,
-            'balance' =>200,
             'account_type_id' => 1
         ]);
     }
