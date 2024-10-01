@@ -2,8 +2,8 @@
 
 ## Iniciar Proyecto
 -  Crear la base de datos: app_financiera
--  Cargar Migraciones y Seeder : php artisan migrate:fresh --seed
--  Cargar Ruta de Test : php artisan serve --host=127.0.0.1 --port=8000
+-  Cargar Migraciones y Seeder(Ejecutar por Consola) : php artisan migrate:fresh --seed
+-  Cargar Ruta de Test(Ejecutar por Consola) : php artisan serve --host=127.0.0.1 --port=8000 
 
 
 ## Requisitos mínimos
