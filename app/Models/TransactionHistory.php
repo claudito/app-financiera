@@ -13,7 +13,10 @@ class TransactionHistory extends Model
         'amount',
         'account_id',
         'type_deposit_id',
-        'transaction_date'
+        'transaction_date',
+        'fee',
+        'amount_before_fee',
+        'account_id_reference',
     ];
 
     protected $casts = [

@@ -20,7 +20,8 @@ return new class extends Migration
             $table->unsignedBigInteger('type_deposit_id');
             $table->dateTime('transaction_date');
             $table->string('fee')->nullable();
-            $table->decimal('amount_fee', $precision = 8, $scale = 2)->nullable();
+            $table->decimal('amount_before_fee', $precision = 8, $scale = 2)->nullable();
+            $table->integer('account_id_reference')->nullable();
             $table->timestamps();
         });
     }
