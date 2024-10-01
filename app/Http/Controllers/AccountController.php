@@ -42,10 +42,10 @@ class AccountController extends Controller
     }
 
 
-        //Listar 1 Sola Cuenta
-        function info($id)
-        {
-            $result =  Account::selectRaw("
+    //Listar 1 Sola Cuenta
+    function info($id)
+    {
+        $result =  Account::selectRaw("
                     accounts.id,
                     accounts.user_id,
                     null saldo,
@@ -53,22 +53,22 @@ class AccountController extends Controller
                     account_types.name tipoCuenta,
                     null historialTransacciones 
             ")
-                ->join('account_types', function ($join) {
-                    $join->on('accounts.account_type_id', '=', 'account_types.id');
-                })
-                ->where('accounts.id',$id)
-                ->get()
-                ->map(function ($item) {
-                    $item->titularCuenta = $item->canTitular();
-                    $item->historialTransacciones  = $item->canHistory();
-                    $item->saldo = $item->canBalance();
-                    return $item->makeHidden(['user_id']);
-                });
-            return [
-                'error' => 0,
-                'data' => $result->first()
-            ];
-        }
+            ->join('account_types', function ($join) {
+                $join->on('accounts.account_type_id', '=', 'account_types.id');
+            })
+            ->where('accounts.id', $id)
+            ->get()
+            ->map(function ($item) {
+                $item->titularCuenta = $item->canTitular();
+                $item->historialTransacciones  = $item->canHistory();
+                $item->saldo = $item->canBalance();
+                return $item->makeHidden(['user_id']);
+            });
+        return [
+            'error' => 0,
+            'data' => $result->first()
+        ];
+    }
 
     //Deposito
     function depositar($id, Request $request)
@@ -203,9 +203,9 @@ class AccountController extends Controller
                 'fee' => $validateCommission['fee'],
                 'amount_before_fee' => $request->monto,
                 'type_deposit_id' => 3,
-                'account_id_reference'=>$request->cuenta_destino,
+                'account_id_reference' => $request->cuenta_destino,
                 'transaction_date' => Carbon::now()
-                
+
             ]);
 
             //Cuenta Destino
@@ -215,7 +215,7 @@ class AccountController extends Controller
                 'fee' => null,
                 'amount_before_fee' => null,
                 'type_deposit_id' => 1,
-                'account_id_reference'=>$id,
+                'account_id_reference' => $id,
                 'transaction_date' => Carbon::now()
             ]);
 
@@ -250,7 +250,7 @@ class AccountController extends Controller
                 return [
                     'error' => 0,
                     'message' => 'Autorizado!',
-                    'fee' =>  $fee .'%',
+                    'fee' =>  $fee . '%',
                     'amount_fee' => $retiro
                 ];
             } else {
@@ -269,7 +269,7 @@ class AccountController extends Controller
 
             //Validar saldo Disponible
             if ((float)$retiro <= (float)$saldo) {
-                $saldo_after_retiro = (float)$saldo - (float)$retiro  ;
+                $saldo_after_retiro = (float)$saldo - (float)$retiro;
 
                 //Validar Saldo Minimo Luego de Retiro:
                 if ((float)$saldo_after_retiro <= (float)$minimum_balance) {
@@ -323,7 +323,7 @@ class AccountController extends Controller
                 return [
                     'error' => 0,
                     'message' => 'Autorizado!',
-                    'fee' =>  $fee .'%',
+                    'fee' =>  $fee . '%',
                     'amount_fee' => $retiro
                 ];
             } else {
@@ -342,10 +342,10 @@ class AccountController extends Controller
 
             //Validar saldo Disponible
             if ((float)$retiro <= (float)$saldo) {
-                $saldo_after_retiro = (float)$saldo - (float)$retiro  ;
+                $saldo_after_retiro = (float)$saldo - (float)$retiro;
                 //Validar Saldo Minimo Luego de Retiro:
                 if ((float)$saldo_after_retiro <= (float)$minimum_balance) {
-                   
+
                     return [
                         'error' => 1,
                         'message' => 'No se puede retirar: Retiro Excede Monto Mínimo de la cuenta',
