@@ -21,6 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('cuentas', [ AccountController::class, 'index']);
+Route::get('cuentas/{id}', [ AccountController::class, 'info']);
 Route::post('cuentas/{id}/depositar', [ AccountController::class, 'depositar']);
 Route::post('cuentas/{id}/retirar', [ AccountController::class, 'retirar']);
 Route::post('cuentas/{id}/transferir', [ AccountController::class, 'transferir']);

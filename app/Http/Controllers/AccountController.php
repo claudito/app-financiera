@@ -41,6 +41,35 @@ class AccountController extends Controller
         ];
     }
 
+
+        //Listar 1 Sola Cuenta
+        function info($id)
+        {
+            $result =  Account::selectRaw("
+                    accounts.id,
+                    accounts.user_id,
+                    null saldo,
+                    null titularCuenta,
+                    account_types.name tipoCuenta,
+                    null historialTransacciones 
+            ")
+                ->join('account_types', function ($join) {
+                    $join->on('accounts.account_type_id', '=', 'account_types.id');
+                })
+                ->where('accounts.id',$id)
+                ->get()
+                ->map(function ($item) {
+                    $item->titularCuenta = $item->canTitular();
+                    $item->historialTransacciones  = $item->canHistory();
+                    $item->saldo = $item->canBalance();
+                    return $item->makeHidden(['user_id']);
+                });
+            return [
+                'error' => 0,
+                'data' => $result->first()
+            ];
+        }
+
     //Deposito
     function depositar($id, Request $request)
     {
@@ -240,7 +269,7 @@ class AccountController extends Controller
 
             //Validar saldo Disponible
             if ((float)$retiro <= (float)$saldo) {
-                $saldo_after_retiro = (float)$retiro -  (float)$saldo;
+                $saldo_after_retiro = (float)$saldo - (float)$retiro  ;
 
                 //Validar Saldo Minimo Luego de Retiro:
                 if ((float)$saldo_after_retiro <= (float)$minimum_balance) {
@@ -313,10 +342,10 @@ class AccountController extends Controller
 
             //Validar saldo Disponible
             if ((float)$retiro <= (float)$saldo) {
-                $saldo_after_retiro = (float)$retiro -  (float)$saldo;
-
+                $saldo_after_retiro = (float)$saldo - (float)$retiro  ;
                 //Validar Saldo Minimo Luego de Retiro:
                 if ((float)$saldo_after_retiro <= (float)$minimum_balance) {
+                   
                     return [
                         'error' => 1,
                         'message' => 'No se puede retirar: Retiro Excede Monto Mínimo de la cuenta',
@@ -333,7 +362,7 @@ class AccountController extends Controller
                     'error' => 0,
                     'message' => 'Autorizado!',
                     'fee' =>  null,
-                    'amount_fee' => null
+                    'amount_fee' => $request->monto
                 ];
             } else {
                 return [
