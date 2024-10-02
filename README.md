@@ -13,6 +13,7 @@
 ## Requisitos mínimos
 -  PHP 8 o superior
 -  MySQL >= 8.0 o MariaDB >= 10.5
+-  Tener Instalado [ Composer ](https://getcomposer.org/download/).
 
 ## Paquetes Instalados
 -   [ Laravel 10 ](https://laravel.com/docs/10.x).
