@@ -24,3 +24,5 @@
 ![parte-2](https://github.com/user-attachments/assets/a6519b36-cd7c-49d0-aafa-3258a6cbf7f9)
 
 ## Test en Postman
+-   Click en la imagen , para ampliar:
+![parte-5](https://github.com/user-attachments/assets/45eb1a00-825d-4dac-b59b-5cb98ed210d3)
