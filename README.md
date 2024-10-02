@@ -2,6 +2,7 @@
 
 ## Iniciar Proyecto
 -  Crear la base de datos: app_financiera
+-  Ejecutar Composer: composer install --ignore-platform-reqs
 -  Cargar Migraciones y Seeder(Ejecutar por Consola) : php artisan migrate:fresh --seed
 -  Cargar Ruta de Test(Ejecutar por Consola) : php artisan serve --host=127.0.0.1 --port=8000 
 
