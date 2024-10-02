@@ -18,7 +18,7 @@
 
 ## Vídeo de Instalación
 -    Parte 1:
-![parte1 (2)](https://github.com/user-attachments/assets/5ac4da1f-5d18-4bbd-9a18-c88ed08703fe)
+![parte1](https://github.com/user-attachments/assets/aa3efb59-33dd-4e38-a8fe-fc680f4c9a33)
 
 
 
