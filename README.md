@@ -18,5 +18,6 @@
 
 ## Vídeo de ayuda
 -    Parte 1
+https://github.com/user-attachments/assets/f05859ed-fe49-48c8-9fe8-f852b73fdf46
 
-![parte1](https://github.com/user-attachments/assets/9456abb8-b2ec-4517-a330-9fdec42bfd0a)
+
