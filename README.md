@@ -17,7 +17,7 @@
 -   [ Laravel 10 ](https://laravel.com/docs/10.x).
 
 ## Vídeo de Instalación
--    Parte 1:
+-    Parte 1 (Click para ampliar):
 ![parte1](https://github.com/user-attachments/assets/aa3efb59-33dd-4e38-a8fe-fc680f4c9a33)
 
 
