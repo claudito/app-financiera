@@ -16,8 +16,9 @@
 ## Paquetes Instalados
 -   [ Laravel 10 ](https://laravel.com/docs/10.x).
 
-## Vídeo de ayuda
--    Parte 1
-https://github.com/user-attachments/assets/f05859ed-fe49-48c8-9fe8-f852b73fdf46
+## Vídeo de Instalación
+-    Parte 1:
+![parte1 (2)](https://github.com/user-attachments/assets/5ac4da1f-5d18-4bbd-9a18-c88ed08703fe)
+
 
 
